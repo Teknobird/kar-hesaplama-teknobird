@@ -44,7 +44,7 @@
       linear-gradient(90deg, var(--border-soft) 1px, transparent 1px);
     background-size: auto, auto, 34px 34px, 34px 34px;
     background-position: 0 0, 0 0, -1px -1px, -1px -1px;
-    padding: 24px 12px 32px; /* Iframe içi üst boşlukları biraz azalttık */
+    padding: 16px 12px; /* Alttaki gereksiz boşluğu önlemek için padding daraltıldı */
   }
 
   .wrap{
@@ -60,7 +60,7 @@
     letter-spacing: 0.16em;
     text-transform: uppercase;
     color: var(--accent);
-    margin-bottom: 14px;
+    margin-bottom: 12px;
   }
   .eyebrow::before{
     content:"";
@@ -71,9 +71,9 @@
   }
 
   h1{
-    font-size: 26px; /* Iframe için başlığı hafif küçülttük */
+    font-size: 24px;
     line-height:1.15;
-    margin: 0 0 8px;
+    margin: 0 0 6px;
     font-weight: 800;
     letter-spacing: -0.01em;
   }
@@ -81,16 +81,16 @@
 
   .subtitle{
     color: var(--text-muted);
-    font-size: 13.5px;
-    line-height:1.55;
-    margin: 0 0 24px;
+    font-size: 13px;
+    line-height:1.5;
+    margin: 0 0 20px;
     max-width: 60ch;
   }
 
-  /* ---- DEĞİŞİKLİK: Esnek Yan Yana Düzen ---- */
+  /* ---- Layout: Yan yana esnek grid ---- */
   .layout{
     display:grid;
-    grid-template-columns: 1.2fr 1fr; /* Yarı yarıya yakın veya esnek yan yana alan */
+    grid-template-columns: 1.1fr 1fr;
     gap: 14px;
     align-items:start;
   }
@@ -104,16 +104,16 @@
     background: var(--bg-card);
     border: 1px solid var(--border);
     border-radius: 12px;
-    margin-bottom: 16px;
+    margin-bottom: 14px;
   }
   .tab{
     appearance:none; border:none; cursor:pointer;
     background: transparent;
     color: var(--text-muted);
     font-family: var(--sans);
-    font-size: 11.5px;
+    font-size: 11px;
     font-weight: 600;
-    padding: 8px 4px;
+    padding: 8px 2px;
     border-radius: 8px;
     line-height:1.3;
     transition: background .18s ease, color .18s ease;
@@ -130,13 +130,15 @@
     background: var(--bg-card);
     border: 1px solid var(--border);
     border-radius: 16px;
-    padding: 20px;
+    padding: 18px;
     box-shadow: 0 1px 2px rgba(20,20,30,0.03);
   }
 
   .field{
-    margin-bottom: 14px;
+    margin-bottom: 12px;
   }
+  .field:last-of-type{ margin-bottom: 0; }
+  
   .field label{
     display:flex; justify-content:space-between; align-items:baseline;
     font-size: 12px;
@@ -147,7 +149,7 @@
   .field label .req{ color: var(--accent); margin-left:3px; }
   .field label .hint{
     font-family: var(--mono);
-    font-size: 10.5px;
+    font-size: 10px;
     color: var(--text-faint);
     font-weight: 400;
   }
@@ -183,22 +185,22 @@
     color: var(--text);
     font-family: var(--mono);
     font-size: 15px;
-    padding: 11px 12px;
+    padding: 10px 12px;
   }
   input::placeholder{ color: var(--text-faint); }
 
   .btn-row{
     display:flex;
     gap: 8px;
-    margin-top: 18px;
+    margin-top: 16px;
   }
   .btn{
     appearance:none; border:none; cursor:pointer;
     font-family: var(--sans);
     font-weight: 700;
-    font-size: 13.5px;
+    font-size: 13px;
     border-radius: 10px;
-    padding: 11px 16px;
+    padding: 11px 14px;
     transition: transform .12s ease, filter .12s ease, background .15s ease;
   }
   .btn:active{ transform: scale(0.98); }
@@ -217,7 +219,7 @@
   .btn-ghost:hover{ color:var(--text); border-color:#c9c9d2; background: var(--bg-card-2); }
 
   .error{
-    font-size: 12px;
+    font-size: 11.5px;
     color: var(--danger);
     margin-top: 8px;
     display:none;
@@ -236,21 +238,21 @@
   }
 
   .result-empty{
-    padding: 40px 20px;
+    padding: 32px 16px;
     text-align:center;
     color: var(--text-faint);
-    font-size: 12.5px;
-    line-height:1.6;
+    font-size: 12px;
+    line-height:1.5;
   }
   .result-empty .icon{
-    width:36px; height:36px;
-    margin: 0 auto 12px;
+    width:34px; height:34px;
+    margin: 0 auto 10px;
     border-radius: 50%;
     background: var(--bg-card-2);
     border: 1px solid var(--border);
     display:flex; align-items:center; justify-content:center;
     color: var(--text-faint);
-    font-size: 16px;
+    font-size: 15px;
   }
   .result.has-data .result-empty{ display:none; }
   .result-body{ display:none; }
@@ -258,30 +260,30 @@
 
   .result-top{
     background: linear-gradient(135deg, rgba(232,53,46,0.08), rgba(232,53,46,0.01));
-    padding: 20px;
+    padding: 16px;
     border-bottom: 1px solid var(--border);
   }
   .result-label{
     font-family: var(--mono);
-    font-size: 10.5px;
+    font-size: 10px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--text-muted);
-    margin-bottom: 6px;
+    margin-bottom: 4px;
   }
   .result-figure{
     font-family: var(--mono);
-    font-size: 26px; /* İframe içinde sığması için font küçültüldü */
+    font-size: 24px;
     font-weight: 700;
     line-height:1.1;
     letter-spacing:-0.01em;
     display:flex;
     align-items:baseline;
-    gap:6px;
+    gap:4px;
     flex-wrap: wrap;
   }
   .result-figure .cur{
-    font-size: 16px;
+    font-size: 15px;
     color: var(--text-muted);
     font-weight:500;
   }
@@ -289,7 +291,7 @@
   .result-figure.neg{ color: var(--danger); }
 
   .gauge{
-    margin-top:14px;
+    margin-top:12px;
     height:5px;
     background: var(--bg-card-2);
     border-radius: 4px;
@@ -309,290 +311,46 @@
     grid-template-columns: 1fr;
   }
   .result-cell{
-    padding: 12px 20px;
+    padding: 10px 16px;
     border-bottom: 1px solid var(--border-soft);
   }
   .result-cell:last-child{ border-bottom:none; }
   .result-cell .k{
     font-size: 11px;
     color: var(--text-muted);
-    margin-bottom: 4px;
+    margin-bottom: 2px;
   }
   .result-cell .v{
     font-family: var(--mono);
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 600;
   }
 
   footer{
-    margin-top: 22px;
+    margin-top: 16px;
     text-align:center;
     font-size: 11px;
     color: var(--text-faint);
   }
   footer a{ color: var(--accent); text-decoration:none; }
 
-  /* ---- DEĞİŞİKLİK: Sadece aşırı dar dikey telefonlarda alt alta getir ---- */
-  @media (max-width: 380px){
-    .layout{ grid-template-columns: 1fr; }
+  /* ---- MOBİL VE DAR EKRAN UYUMLULUĞU ---- */
+  @media (max-width: 480px){
+    body { padding: 8px; }
+    .layout{ grid-template-columns: 1fr; gap: 14px; } /* Mobilde zorunlu alt alta sıralama */
     .result{ position: static; }
+    .card { padding: 14px; }
+    .tabs { margin-bottom: 12px; }
+    .tab { font-size: 10px; padding: 6px 2px; }
+    input[type="text"], input[type="number"] { font-size: 14px; padding: 9px 10px; }
+    .btn { font-size: 12.5px; padding: 10px 12px; }
   }
 
-  @media (max-width:420px){
-    h1{ font-size:22px; }
-    .result-figure{ font-size:22px; }
-    .tab{ font-size: 10.5px; padding: 7px 2px; }
+  @media (max-width: 350px){
+    .tab { font-size: 9px; }
+    .result-figure { font-size: 20px; }
   }
 </style>
 </head>
 <body>
-  <div class="wrap">
-    <div class="eyebrow">Teknobird Finans Araçları</div>
-    <h1>Kâr <span>Hesaplama</span></h1>
-    <p class="subtitle">Alış ve satış fiyatından kâr oranını, ya da kâr oranından satış veya alış fiyatını saniyeler içinde hesapla.</p>
-
-    <div class="layout">
-      <div class="col-form">
-        <div class="tabs" role="tablist">
-          <button class="tab active" data-mode="oran">Kâr Oranı<br>Hesapla</button>
-          <button class="tab" data-mode="satis">Satış Fiyatı<br>Hesapla</button>
-          <button class="tab" data-mode="alis">Alış Fiyatı<br>Hesapla</button>
-        </div>
-
-        <div class="card">
-
-          <div class="mode-panel" id="panel-oran">
-            <div class="field">
-              <label>Alış Fiyatı <span class="req">*</span><span class="hint">örn. 1650,75</span></label>
-              <div class="input-shell">
-                <input type="text" inputmode="decimal" id="oran-alis" placeholder="0,00">
-                <span class="unit">₺</span>
-              </div>
-            </div>
-            <div class="field">
-              <label>Satış Fiyatı <span class="req">*</span><span class="hint">örn. 1768,25</span></label>
-              <div class="input-shell">
-                <input type="text" inputmode="decimal" id="oran-satis" placeholder="0,00">
-                <span class="unit">₺</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="mode-panel" id="panel-satis" style="display:none;">
-            <div class="field">
-              <label>Alış Fiyatı <span class="req">*</span><span class="hint">örn. 1650,75</span></label>
-              <div class="input-shell">
-                <input type="text" inputmode="decimal" id="satis-alis" placeholder="0,00">
-                <span class="unit">₺</span>
-              </div>
-            </div>
-            <div class="field">
-              <label>Kâr Oranı <span class="req">*</span><span class="hint">örn. 15</span></label>
-              <div class="input-shell">
-                <input type="text" inputmode="decimal" id="satis-oran" placeholder="0,00">
-                <span class="unit">%</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="mode-panel" id="panel-alis" style="display:none;">
-            <div class="field">
-              <label>Satış Fiyatı <span class="req">*</span><span class="hint">örn. 1768,25</span></label>
-              <div class="input-shell">
-                <input type="text" inputmode="decimal" id="alis-satis" placeholder="0,00">
-                <span class="unit">₺</span>
-              </div>
-            </div>
-            <div class="field">
-              <label>Kâr Oranı <span class="req">*</span><span class="hint">örn. 15</span></label>
-              <div class="input-shell">
-                <input type="text" inputmode="decimal" id="alis-oran" placeholder="0,00">
-                <span class="unit">%</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="error" id="error-box">Lütfen tüm zorunlu alanları geçerli sayılarla doldurun.</div>
-
-          <div class="btn-row">
-            <button class="btn btn-primary" id="calc-btn">Hesapla</button>
-            <button class="btn btn-ghost" id="reset-btn">Sıfırla</button>
-          </div>
-        </div>
-
-        <footer>Teknobird.com için hazırlanmıştır</footer>
-      </div>
-
-      <div class="col-result">
-        <div class="result" id="result-box">
-          <div class="result-empty">
-            <div class="icon">₺</div>
-            Değerleri girip <strong>Hesapla</strong>'ya basın,<br>sonuç burada görünecek.
-          </div>
-          <div class="result-body">
-            <div class="result-top">
-              <div class="result-label" id="result-label">Hesaplanan Kâr Tutarı</div>
-              <div class="result-figure" id="result-figure"><span class="cur">₺</span><span id="result-main">0,00</span></div>
-              <div class="gauge"><div class="gauge-fill" id="gauge-fill"></div></div>
-            </div>
-            <div class="result-grid" id="result-grid"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-<script>
-(function(){
-  var tabs = document.querySelectorAll('.tab');
-  var panels = { oran: document.getElementById('panel-oran'), satis: document.getElementById('panel-satis'), alis: document.getElementById('panel-alis') };
-  var currentMode = 'oran';
-  var errorBox = document.getElementById('error-box');
-  var resultBox = document.getElementById('result-box');
-
-  tabs.forEach(function(tab){
-    tab.addEventListener('click', function(){
-      tabs.forEach(function(t){ t.classList.remove('active'); });
-      tab.classList.add('active');
-      currentMode = tab.getAttribute('data-mode');
-      Object.keys(panels).forEach(function(k){ panels[k].style.display = (k === currentMode) ? 'block' : 'none'; });
-      hideResult();
-      hideError();
-    });
-  });
-
-  function parseNum(str){
-    if(str === undefined || str === null) return NaN;
-    str = String(str).trim();
-    if(str === '') return NaN;
-    str = str.replace(/\./g, '').replace(/,/g, '.');
-    var n = parseFloat(str);
-    return isNaN(n) ? NaN : n;
-  }
-
-  function fmtTL(n){
-    return n.toLocaleString('tr-TR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-  }
-  function fmtPct(n){
-    return n.toLocaleString('tr-TR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-  }
-
-  function showError(msg){
-    errorBox.textContent = msg || 'Lütfen tüm zorunlu alanları geçerli sayılarla doldurun.';
-    errorBox.classList.add('show');
-  }
-  function hideError(){ errorBox.classList.remove('show'); }
-  function hideResult(){ resultBox.classList.remove('has-data'); }
-
-  function renderResult(labelText, mainValue, isCurrency, cells, gaugePct, tone){
-    document.getElementById('result-label').textContent = labelText;
-    var figure = document.getElementById('result-figure');
-    var mainEl = document.getElementById('result-main');
-    var curSpan = figure.querySelector('.cur');
-
-    figure.classList.remove('pos','neg');
-    if(tone === 'pos') figure.classList.add('pos');
-    if(tone === 'neg') figure.classList.add('neg');
-
-    if(isCurrency){
-      curSpan.style.display = 'inline';
-      curSpan.textContent = '₺';
-      mainEl.textContent = fmtTL(mainValue);
-    } else {
-      curSpan.style.display = 'inline';
-      curSpan.textContent = '';
-      mainEl.textContent = fmtPct(mainValue) + ' %';
-    }
-
-    var grid = document.getElementById('result-grid');
-    grid.innerHTML = '';
-    cells.forEach(function(c){
-      var cell = document.createElement('div');
-      cell.className = 'result-cell';
-      cell.innerHTML = '<div class="k">'+c.k+'</div><div class="v">'+c.v+'</div>';
-      grid.appendChild(cell);
-    });
-
-    var gf = document.getElementById('gauge-fill');
-    var pct = Math.max(0, Math.min(100, Math.abs(gaugePct)));
-    requestAnimationFrame(function(){ gf.style.width = pct + '%'; });
-
-    resultBox.classList.add('has-data');
-  }
-
-  function calculate(){
-    hideError();
-
-    if(currentMode === 'oran'){
-      var alis = parseNum(document.getElementById('oran-alis').value);
-      var satis = parseNum(document.getElementById('oran-satis').value);
-      if(isNaN(alis) || isNaN(satis) || alis <= 0){
-        showError('Lütfen geçerli bir alış ve satış fiyatı girin. Alış fiyatı 0\'dan büyük olmalıdır.');
-        hideResult();
-        return;
-      }
-      var karTutari = satis - alis;
-      var karOrani = (karTutari / alis) * 100;
-      var marjOrani = satis !== 0 ? (karTutari / satis) * 100 : 0;
-      var tone = karTutari >= 0 ? 'pos' : 'neg';
-
-      renderResult('Kâr Tutarı', karTutari, true, [
-        { k:'Kâr Oranı (Alışa göre)', v: fmtPct(karOrani) + ' %' },
-        { k:'Kâr Marjı (Satışa göre)', v: fmtPct(marjOrani) + ' %' }
-      ], Math.abs(karOrani), tone);
-
-    } else if(currentMode === 'satis'){
-      var alis2 = parseNum(document.getElementById('satis-alis').value);
-      var oran2 = parseNum(document.getElementById('satis-oran').value);
-      if(isNaN(alis2) || isNaN(oran2) || alis2 <= 0){
-        showError('Lütfen geçerli bir alış fiyatı ve kâr oranı girin. Alış fiyatı 0\'dan büyük olmalıdır.');
-        hideResult();
-        return;
-      }
-      var satisFiyati = alis2 * (1 + oran2/100);
-      var karTutari2 = satisFiyati - alis2;
-      var marjOrani2 = satisFiyati !== 0 ? (karTutari2 / satisFiyati) * 100 : 0;
-      var tone2 = karTutari2 >= 0 ? 'pos' : 'neg';
-
-      renderResult('Hesaplanan Satış Fiyatı', satisFiyati, true, [
-        { k:'Kâr Tutarı', v: '₺' + fmtTL(karTutari2) },
-        { k:'Kâr Marjı (Satışa göre)', v: fmtPct(marjOrani2) + ' %' }
-      ], Math.abs(oran2), tone2);
-
-    } else if(currentMode === 'alis'){
-      var satis3 = parseNum(document.getElementById('alis-satis').value);
-      var oran3 = parseNum(document.getElementById('alis-oran').value);
-      if(isNaN(satis3) || isNaN(oran3) || satis3 <= 0 || (1 + oran3/100) === 0){
-        showError('Lütfen geçerli bir satış fiyatı ve kâr oranı girin. Satış fiyatı 0\'dan büyük olmalıdır.');
-        hideResult();
-        return;
-      }
-      var alisFiyati = satis3 / (1 + oran3/100);
-      var karTutari3 = satis3 - alisFiyati;
-      var marjOrani3 = (karTutari3 / satis3) * 100;
-      var tone3 = karTutari3 >= 0 ? 'pos' : 'neg';
-
-      renderResult('Hesaplanan Alış Fiyatı', alisFiyati, true, [
-        { k:'Kâr Tutarı', v: '₺' + fmtTL(karTutari3) },
-        { k:'Kâr Marjı (Satışa göre)', v: fmtPct(marjOrani3) + ' %' }
-      ], Math.abs(oran3), tone3);
-    }
-  }
-
-  document.getElementById('calc-btn').addEventListener('click', calculate);
-
-  document.getElementById('reset-btn').addEventListener('click', function(){
-    document.querySelectorAll('input').forEach(function(i){ i.value=''; });
-    hideError();
-    hideResult();
-  });
-
-  document.querySelectorAll('input').forEach(function(input){
-    input.addEventListener('keydown', function(e){
-      if(e.key === 'Enter') calculate();
-    });
-  });
-})();
-</script>
-</body>
-</html>
+...
